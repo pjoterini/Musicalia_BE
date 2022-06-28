@@ -1,0 +1,59 @@
+@import 'shared/variables.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
+@import 'shared/author.css';
+@import 'shared/books.css';
+
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color: var(--text-light);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, var(--background-dark), var(--background-light))
+}
+
+h2 {
+    font-size: var(--font-header);
+    font-weight: var(--font-weight-med);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 3rem;
+}
+
+.inner-container {
+    margin: 0 2rem;
+}
+
+.btn-row {
+    display: flex;
+    align-items: flex-start;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-row > * {
+    margin-left: 1rem;
+}
+
+.btn-row > *:first-child {
+    margin-left: 0;
+}
+
+
+.m-bt-0 {
+    margin-bottom: .5rem;
+}
+
+.error-message {
+    color: var(--btn-color-danger-text);
+}

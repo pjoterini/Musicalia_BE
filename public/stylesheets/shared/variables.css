@@ -1,0 +1,16 @@
+:root {
+    --base-hue: 250; 
+    --background-dark: hsl(var(--base-hue), 30%, 8%);
+    --background-light: hsl(var(--base-hue), 30%, 16%);
+    --text-light: hsl(var(--base-hue), 100%, 95%);
+
+    --font-big: 2.5rem;
+    --font-header: 1.5rem;
+    --font-med: 1rem;
+    --font-small: .7rem;
+    
+    --font-weight-big: 700;
+    --font-weight-med: 500;
+    --font-weight-small: 300;
+}
+
