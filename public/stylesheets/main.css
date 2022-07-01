@@ -2,8 +2,8 @@
 @import 'shared/header.css';
 @import 'shared/buttons.css';
 @import 'shared/form.css';
-@import 'shared/author.css';
-@import 'shared/books.css';
+@import 'shared/artist.css';
+@import 'shared/songs.css';
 
 :root {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

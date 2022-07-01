@@ -1,4 +1,4 @@
-.author-row {
+.artist-row {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -6,6 +6,6 @@
     border-bottom: 1px solid var(--form-input-border-color);
 }
 
-.author-name {
+.artist-name {
     font-size: 1.5rem;
 }

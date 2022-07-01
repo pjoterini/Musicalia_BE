@@ -1,7 +1,7 @@
 const rootStyles = window.getComputedStyle(document.documentElement)
 
-if (rootStyles.getPropertyValue('--book-cover-width-large') != null && 
-rootStyles.getPropertyValue('--book-cover-width-large') !== '')
+if (rootStyles.getPropertyValue('--song-cover-width-large') != null && 
+rootStyles.getPropertyValue('--song-cover-width-large') !== '')
 {
     ready()
 } else {
@@ -10,9 +10,9 @@ rootStyles.getPropertyValue('--book-cover-width-large') !== '')
 
 function ready() {
     const coverWidth = parseFloat(rootStyles.getPropertyValue
-    ('--book-cover-width-large'))
+    ('--song-cover-width-large'))
     const coverAspectRatio = parseFloat(rootStyles.getPropertyValue
-    ('--book-cover-aspect-ratio'))
+    ('--song-cover-aspect-ratio'))
     const coverHeight = coverWidth / coverAspectRatio
 
     FilePond.registerPlugin(

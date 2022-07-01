@@ -1,0 +1,25 @@
+<h2 class="page-header"><%= song.title %></h2>
+<div class="song-details">
+  <div>
+    <img class="song-cover" src="<%= song.coverImagePath %>" alt="" />
+    <div class="song-details-btn-grid">
+      <a class="btn btn-primary" href="/songs/<%= song.id  %>/edit">Edit</a>
+      <%- include('../partials/deleteForm', { url: `/songs/${song.id}`}) %>
+      <a
+        class="btn btn-primary song-details-artist-btn"
+        href="/artists/<%= song.artist.id  %>"
+        >View artist</a
+      >
+    </div>
+  </div>
+  <div class="song-details-grid">
+    <div class="song-details-label">artist:</div>
+    <div><%= song.artist.name %></div>
+    <div class="song-details-label">Publish Date:</div>
+    <div><%= song.publishDate.toDateString() %></div>
+    <div class="song-details-label">Page Count:</div>
+    <div><%= song.pageCount %></div>
+    <div class="song-details-label">Description:</div>
+    <div><%= song.description %></div>
+  </div>
+</div>

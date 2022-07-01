@@ -7,10 +7,6 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const methodOverride = require('method-override')
 
-const indexRouter = require('./routes/index')
-const authorRouter = require('./routes/authors')
-const bookRouter = require('./routes/books')
-
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.set('layout', 'layouts/layout')
@@ -26,8 +22,8 @@ const db = mongoose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('connected to Mongoose'))
 
-app.use('/', indexRouter)
-app.use('/authors', authorRouter)
-app.use('/books', bookRouter)
+app.use('/', require('./routes/index'))
+app.use('/artists', require('./routes/artists'))
+app.use('/songs', require('./routes/songs'))
 
 app.listen(process.env.PORT || 3000, () => {console.log('http://localhost:3000')})

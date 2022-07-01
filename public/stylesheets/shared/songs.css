@@ -1,0 +1,56 @@
+:root {
+    --song-cover-width: 200px;
+    --song-cover-width-large: 325px;
+    --song-cover-aspect-ratio: 0.75;
+}
+
+.song-cover {
+    width: var(--song-cover-width);
+    height: calc(var(--song-cover-width) / var(--song-cover-aspect-ratio));
+}
+
+.song-cover-large {
+    --song-cover-width: var(var(--song-cover-width-large))
+}
+
+.song-grid {
+    display: grid;
+    justify-content: start;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, var(--song-cover-width));
+}
+
+.song-details {
+    display: flex;
+}
+
+.song-details-grid {
+    display: grid;
+    align-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    grid-template-columns: auto auto;
+    margin-left: 1rem;
+}
+
+.song-details-label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.song-details-btn-grid {
+    display: grid;
+    justify-items: stretch;
+    grid-template-areas: 
+    "edit delete"
+    "artist artist"
+    ;
+    gap: .5rem;
+    margin-top: .5rem;
+}
+
+.song-details-artist-btn {
+    grid-area: artist;
+    justify-self: stretch;
+}
