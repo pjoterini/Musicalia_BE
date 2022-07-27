@@ -26,4 +26,5 @@ app.use('/', require('./routes/index'))
 app.use('/artists', require('./routes/artists'))
 app.use('/songs', require('./routes/songs'))
 
+
 app.listen(process.env.PORT || 3000, () => {console.log('http://localhost:3000')})
