@@ -10,12 +10,7 @@ router.get('/', async (req, res) => {
     if (req.query.title != null && req.query.title != '') {
         query = query.regex('title', new RegExp(req.query.title, 'i'))
     }
-    if (req.query.publishedBefore != null && req.query.publishedBefore != '') {
-        query = query.lte('publishDate', req.query.publishedBefore)
-    }
-    if (req.query.publishedAfter != null && req.query.publishedAfter != '') {
-        query = query.gte('publishDate', req.query.publishedAfter)
-    }
+    
     try {
         const songs = await query.exec()
         res.render('songs/index', {
@@ -37,15 +32,14 @@ router.post('/', async (req, res) => {
     const song = new Song({
         title: req.body.title,
         artist: req.body.artist,
-        publishDate: new Date(req.body.publishDate),
-        pageCount: req.body.pageCount,
-        description: req.body.description
+        genre: req.body.genre,
+        rating: req.body.rating,
     })
     saveCover(song, req.body.cover)
 
     try {
         const newSong = await song.save()
-        res.redirect(`songs/${newsong.id}`)
+        res.redirect(`songs/${newSong.id}`)
     } catch {
         renderNewPage(res, song, true)
     }
@@ -139,6 +133,7 @@ async function renderFormPage(res, song, form, hasError = false) {
         res.render(`songs/${form}`, params)
     } catch {
         res.redirect('/songs')
+        console.log(error)
     }
 }
 

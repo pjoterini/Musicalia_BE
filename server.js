@@ -1,6 +1,11 @@
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
-}
+const dotenv = require('dotenv')
+dotenv.config()
+
+const mongoose = require('mongoose')
+mongoose.connect(process.env.CONNECTIONSTRING)
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log('connected to Mongoose'))
 
 const express = require('express')
 const app = express()
@@ -16,11 +21,6 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ limit: '10mb', extended: false}))
 app.use(express.json())
 
-const mongoose = require('mongoose')
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
-const db = mongoose.connection
-db.on('error', error => console.error(error))
-db.once('open', () => console.log('connected to Mongoose'))
 
 app.use('/', require('./routes/index'))
 app.use('/artists', require('./routes/artists'))

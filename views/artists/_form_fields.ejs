@@ -5,10 +5,14 @@
     <label for="">Genre</label>
     <input type="text" name="genre" value="<%= artist.genre %>" />
     <label for="">Rating</label>
-    <input type="number" name="rating" value="<%= artist.rating %>" />
+    <input
+      type="number"
+      min="1"
+      max="10"
+      name="rating"
+      value="<%= artist.rating %>"
+    />
     <label for="">Cover Image</label>
-    <input type="text" name="coverImage" value="<%= artist.coverImage %>" />
-    <label for="">Albums</label>
-    <input type="text" name="albums" value="<%= artist.albums %>" />
+    <input type="file" name="cover" class="song-cover filepond" />
   </div>
 </div>

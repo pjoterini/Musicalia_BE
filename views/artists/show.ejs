@@ -1,5 +1,6 @@
 <h2><%= artist.name %></h2>
 <div class="btn-row">
+  <img class="" src="<%= artist.coverImagePath %>" alt="" />
   <a class="btn btn-primary" href="/artists/<%= artist.id %>/edit">Edit</a>
   <%- include('../partials/deleteForm', { url: `/artists/${artist.id}` }) %>
 </div>

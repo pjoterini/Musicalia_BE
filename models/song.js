@@ -5,22 +5,22 @@ const songSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String
-    },
-    publishDate: {
-        type: Date,
-        required: true
-    },
-    pageCount: {
-        type: Number,
-        required: true
-    },
-    createdAt: {
-        type: Date,
+    aritst: {
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        default: Date.now
+        ref: 'Artist'
     },
+    // genre: {
+    //     type: mongoose.Schema.Types.ObjectId.genre,
+    //     required: true,
+    //     ref: 'Artist'
+    // },
+	rating: {
+		type: Number,
+		max: 10,
+		min: 1,
+		required: true
+	},
     coverImage: {
         type: Buffer,
         required: true
@@ -29,10 +29,10 @@ const songSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    aritst: {
-        type: mongoose.Schema.Types.ObjectId,
+    createdAt: {
+        type: Date,
         required: true,
-        ref: 'Artist'
+        default: Date.now
     }
 })
 
@@ -42,4 +42,4 @@ songSchema.virtual('coverImagePath').get(function() {
     }
 })
 
-module.exports = mongoose.model('Songs', songSchema)
+module.exports = mongoose.model('Song', songSchema)

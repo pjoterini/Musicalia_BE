@@ -2,6 +2,12 @@
 <form action="/songs" method="GET">
   <div class="form-row">
     <div class="form-item">
+      <label for="">Artist</label>
+      <input type="text" name="artist" value="<%= searchOptions.artist %>" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-item">
       <label for="">Title</label>
       <input type="text" name="title" value="<%= searchOptions.title %>" />
     </div>
@@ -9,20 +15,12 @@
 
   <div class="form-row">
     <div class="form-item">
-      <label for="">Published After</label>
-      <input
-        type="date"
-        name="publishedAfter"
-        value="<%= searchOptions.publishedAfter %>"
-      />
+      <label for="">Genre</label>
+      <input type="text" name="genre" value="<%= searchOptions.genre %>" />
     </div>
     <div class="form-item">
-      <label for="">Published Before</label>
-      <input
-        type="date"
-        name="publishedBefore"
-        value="<%= searchOptions.publishedBefore %>"
-      />
+      <label for="">rating</label>
+      <input type="number" name="rating" value="<%= searchOptions.rating %>" />
     </div>
   </div>
   <div class="form-row form-row-end">

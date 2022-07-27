@@ -15,18 +15,14 @@ const artistSchema = new mongoose.Schema({
 		min: 1,
 		required: true
 	},
-	albums: {
-		type: Array
-	},
 	coverImage: {
-		type: Buffer,
-		default: `band name`,
-		// required: true
-	},
-	coverImageType: {
-		type: String,
-		// required: true
-	},
+        type: Buffer,
+        required: true
+    },
+    coverImageType: {
+        type: String,
+        required: true
+    },
 	createdAt: {
 		type: Date,
 		required: true,
@@ -34,9 +30,10 @@ const artistSchema = new mongoose.Schema({
 	}
 })
 
-artistSchema.methods.speak = function speak() {
-	const greeting = `i'm ${this.name}, lets fkin rock boi`
-	console.log(greeting)
-}
+artistSchema.virtual('coverImagePath').get(function() {
+    if (this.coverImage != null && this.coverImageType != null) {
+        return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+    }
+})
 
 module.exports = mongoose.model('Artist', artistSchema)

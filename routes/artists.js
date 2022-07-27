@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Artist = require('../models/artist')
 const Song = require('../models/song')
+const imageMimeTypes = ['image/jpeg', 'image/png', 'image/gif',]
 
 // ALL Artists Route
 router.get('/', async (req, res) => {
@@ -32,6 +33,8 @@ router.post('/', async (req, res) => {
        genre: req.body.genre, 
        rating: req.body.rating 
     })
+    saveCover(artist, req.body.cover)
+
     try {
         const newArtist = await artist.save()
          res.redirect(`artists/${newArtist.id}`)
@@ -99,5 +102,14 @@ router.delete('/:id', async (req, res) => {
        }
    }
 })
+
+function saveCover(song, coverEncoded) {
+    if (coverEncoded == null) return
+    const cover = JSON.parse(coverEncoded)
+    if (cover != null && imageMimeTypes.includes(cover.type)) {
+        song.coverImage = new Buffer.from(cover.data, 'base64')
+        song.coverImageType = cover.type
+    }
+}
 
 module.exports = router

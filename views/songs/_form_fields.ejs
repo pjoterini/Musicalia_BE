@@ -21,20 +21,17 @@
 
 <div class="form-row">
   <div class="form-item">
-    <label for="">Publish Date</label>
-    <input
-      type="date"
-      name="publishDate"
-      value="<%= song.publishDate == null ? '' : song.publishDate.toISOString().split('T')[0] %>"
-    />
+    <label for="">Genre</label>
+    <input type="text" name="genre" value="<%= song.genre %>" />
   </div>
   <div class="form-item">
-    <label for="">Page Count</label>
+    <label for="">Rating</label>
     <input
       type="number"
-      name="pageCount"
+      name="rating"
       min="1"
-      value="<%= song.pagecount %>"
+      max="10"
+      value="<%= song.rating %>"
     />
   </div>
 </div>
@@ -43,9 +40,5 @@
   <div class="form-item form-item-no-grow">
     <label for="">Cover</label>
     <input type="file" name="cover" class="song-cover filepond" />
-  </div>
-  <div class="form-item">
-    <label for="">Description</label>
-    <textarea name="description"><%= song.description %></textarea>
   </div>
 </div>
