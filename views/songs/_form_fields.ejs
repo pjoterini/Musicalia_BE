@@ -1,4 +1,4 @@
-<div class="form-row">
+<div class="form-row-song">
   <div class="form-item">
     <label for="">Title</label>
     <input type="text" name="title" value="<%= song.title %>" />
@@ -19,10 +19,20 @@
   </div>
 </div>
 
-<div class="form-row">
+<div class="form-row-song">
   <div class="form-item">
     <label for="">Genre</label>
-    <input type="text" name="genre" value="<%= song.genre %>" />
+    <select name="genre">
+      <% artists.forEach(artist => { %> <% if (artist.id === song.artist) {%>
+      <option
+        selected
+        label="<%= artist.genre %>"
+        value="<%= artist.id %>"
+      ></option>
+      <%} else { %>
+      <option label="<%= artist.genre %>" value="<%= artist.id %>"></option>
+      <% } %> <% }) %>
+    </select>
   </div>
   <div class="form-item">
     <label for="">Rating</label>

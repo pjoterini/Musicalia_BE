@@ -1,7 +1,9 @@
 const rootStyles = window.getComputedStyle(document.documentElement)
 
-if (rootStyles.getPropertyValue('--song-cover-width-large') != null && 
-rootStyles.getPropertyValue('--song-cover-width-large') !== '')
+if (
+    rootStyles.getPropertyValue('--song-cover-width-large') != null && 
+    rootStyles.getPropertyValue('--song-cover-width-large') !== ''  
+    )
 {
     ready()
 } else {
@@ -28,6 +30,5 @@ function ready() {
     })
     
     FilePond.parse(document.body)
-
 }
 

@@ -1,0 +1,71 @@
+<div class="background background-2"></div>
+
+<div class="api-container">
+  <form class="search-form" action="">
+    <h2 class="api-h2">Articles</h2>
+    <div class="api-btn-row">
+      <button class="btn find-api-btn" type="submit" value="music">
+        MUSIC
+      </button>
+      <button class="btn find-api-btn" type="submit" value="songs">
+        SONGS
+      </button>
+
+      <button
+        class="btn find-api-btn"
+        type="submit"
+        value="festival tour band music"
+      >
+        FESTIVALS
+      </button>
+      <button
+        class="btn find-api-btn"
+        type="submit"
+        value="classical concert opera music"
+      >
+        CLASSICAL / OPERA
+      </button>
+      <button
+        class="btn find-api-btn"
+        type="submit"
+        value="artist artists music band bands"
+      >
+        ARTISTS / BANDS
+      </button>
+      <button
+        class="btn find-api-btn"
+        type="submit"
+        value="soundtrack movie game music"
+      >
+        SOUNDTRACKS
+      </button>
+      <button
+        class="btn find-api-btn"
+        type="submit"
+        value="old-music retro-music"
+      >
+        RETRO
+      </button>
+    </div>
+  </form>
+
+  <div class="api-links-container">
+    <ul class="api-links-list">
+      <% articlesList.forEach(article => { %>
+      <div class="api-li">
+        <a class="api-a" href="<%= article.url %> ">
+          <p class="api-title"><%= article.title %></p>
+          <img class="api-img" src="<%= article.urlToImage %> " alt="" />
+          <p class="api-p"><%= article.description.slice(0, 110) %>..</p>
+        </a>
+      </div>
+      <% }) %>
+    </ul>
+  </div>
+</div>
+
+<h2>Recently added</h2>
+<div><%- include('partials/artistGrid', { artists: artists}) %></div>
+<div><%- include('partials/songGrid', { songs: songs, large : false }) %></div>
+
+<script defer src="/javascripts/api.js"></script>

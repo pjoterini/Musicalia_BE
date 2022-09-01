@@ -1,28 +1,52 @@
-<h2>Search Artists</h2>
+<div class="background background-2"></div>
+<h2>Search for artist</h2>
 <form action="/artists" method="GET">
-  <div class="form-row">
+  <div class="form-row-artist">
     <div class="form-item">
       <label for="">Name</label>
-      <input type="text" name="name" value="<%= searchOptions.name %>" />
+      <input type="text" name="name" />
+    </div>
+    <div class="form-item">
+      <label for="">Genre</label>
+      <input type="text" name="genre" />
+    </div>
+    <div class="form-item">
+      <label for="">Rating</label>
+      <input type="text" name="rating" />
     </div>
   </div>
-  <div class="form-row form-row-end">
-    <button class="btn btn-primary" type="submit">Search</button>
+  <div class="form-row-artist form-row-end">
+    <button class="btn btn-find" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
   </div>
 </form>
-<br />
-<% artists.forEach(artist => { %>
-<div class="artist-row">
-  <div class="artist-name"><%= artist.name %></div>
-  <div class="btn-row m-bt-0">
-    <img class="" src="<%= artist.coverImagePath %>" alt="" />
-    <a class="btn btn-primary" href="/artists/<%= artist.id %>">Details</a>
-    <div><%= artist.rating %></div>
-    <div><%= artist.genre %></div>
-    <div>
-      <%= artist.createdAt.toISOString().substring(0,
-      artist.createdAt.toISOString().indexOf('T')) %>
+<div class="artist-grid-big">
+  <% artists.forEach(artist => { %>
+  <div class="artist-card-big">
+    <img class="artist-cover" src="<%= artist.coverImagePath %>" alt="" />
+    <div class="artist-card-big-right">
+      <h3 class="artist-name"><%= artist.name %></h3>
+      <div class="artist-card-big-right-columns">
+        <div class="artist-card-big-right-column">
+          <p>Rating:</p>
+          <p>Genre:</p>
+          <p>Added at:</p>
+        </div>
+        <div class="artist-card-big-right-column">
+          <span><%= artist.rating %>/10</span>
+          <span><%= artist.genre %></span>
+          <span
+            ><%= artist.createdAt.toISOString().substring(0,
+            artist.createdAt.toISOString().indexOf('T')) %></span
+          >
+        </div>
+      </div>
+
+      <a class="btn btn-primary" href="/artists/<%= artist.id %>"
+        >Edit / Delete</a
+      >
     </div>
   </div>
+  <% }) %>
 </div>
-<% }) %>

@@ -1,25 +1,34 @@
+<div class="background background-2"></div>
+
 <h2 class="page-header"><%= song.title %></h2>
 <div class="song-details">
   <div>
     <img class="song-cover" src="<%= song.coverImagePath %>" alt="" />
     <div class="song-details-btn-grid">
-      <a class="btn btn-primary" href="/songs/<%= song.id  %>/edit">Edit</a>
-      <%- include('../partials/deleteForm', { url: `/songs/${song.id}`}) %>
       <a
-        class="btn btn-primary song-details-artist-btn"
+        class="btn song-details-artist-btn"
         href="/artists/<%= song.artist.id  %>"
-        >View artist</a
+        >View Artist</a
       >
+      <a class="btn edit-area" href="/songs/<%= song.id  %>/edit">Edit</a>
+      <%- include('../partials/deleteForm', { url: `/songs/${song.id}`}) %>
     </div>
   </div>
-  <div class="song-details-grid">
-    <div class="song-details-label">artist:</div>
-    <div><%= song.artist.name %></div>
-    <div class="song-details-label">Publish Date:</div>
-    <div><%= song.publishDate.toDateString() %></div>
-    <div class="song-details-label">Page Count:</div>
-    <div><%= song.pageCount %></div>
-    <div class="song-details-label">Description:</div>
-    <div><%= song.description %></div>
+  <div class="song-card-big-right-columns">
+    <div class="song-card-big-right-column">
+      <p>Artist:</p>
+      <p>Rating:</p>
+      <p>Genre:</p>
+      <p>Added at:</p>
+    </div>
+    <div class="song-card-big-right-column">
+      <span><%= song.artist.name %></span>
+      <span><%= song.rating %>/10</span>
+      <span><%= song.artist.genre %></span>
+      <span
+        ><%= song.createdAt.toISOString().substring(0,
+        song.createdAt.toISOString().indexOf('T')) %></span
+      >
+    </div>
   </div>
 </div>

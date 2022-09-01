@@ -20,10 +20,15 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ limit: '10mb', extended: false}))
 app.use(express.json())
 
-
 app.use('/', require('./routes/index'))
 app.use('/artists', require('./routes/artists'))
 app.use('/songs', require('./routes/songs'))
 
+
+app.get('/test', async (req, res) => {
+    const data = await db.collection('artists').find().toArray()
+    console.log(data)
+    res.send('sup')
+})
 
 app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000'))

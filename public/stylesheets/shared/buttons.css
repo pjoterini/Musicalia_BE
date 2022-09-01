@@ -1,42 +1,59 @@
-:root {
-    --btn-color-border: hsl(var(--base-hue), 100%, 95%);
-    --btn-color-primary-text: hsl(var(--base-hue), 100%, 95%);
-    --btn-color-primary-text-hover: hsl(var(--base-hue), 100%, 5%);
-    --btn-color-danger-text: hsl(var(--base-hue), 40%, 50%);
-}
-
 .btn {
-    -webkit-box-shadow:inset 0px 0px 0px 1px var(--btn-color-border);
-    -moz-box-shadow:inset 0px 0px 0px 1px var(--btn-color-border);
-    box-shadow:inset 0px 0px 0px 1px var(--btn-color-border);
+    -webkit-box-shadow:inset 0px 0px 0px 1px var(--btn-border);
+    -moz-box-shadow:inset 0px 0px 0px 1px var(--btn-border);
+    box-shadow:inset 0px 0px 0px 1px var(--btn-border);
     
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--btn-text);
     display: inline-block;
-    padding: .3rem .8rem;
-    font-size: 1.2rem;
+    padding: .6rem 1.3rem;
+    font-size: var(--font-3);
     cursor: pointer;
     text-decoration: none;
     text-align: center;
+    
     outline: none;
     border: none;
+    border-radius: 20px;
 
     transition: all 300ms ease-in-out;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: var(--btn-background);
+}
+
+.btn p {
+    align-self: center;
 }
 
 .btn:hover {
-    background-color: rgba(255, 255, 255, 0.81);
-    box-shadow:inset 0px 0px 0px 2px var(--btn-color-border);
-}
-
-.btn-primary {
-    color: var(--btn-color-primary-text);
-}
-
-.btn-primary:hover {
-    color: var(--btn-color-primary-text-hover);
+    background-color: var(--btn-background-hover);
+    box-shadow:inset 0px 0px 0px 2px var(--btn-border);
+    color: var(--btn-text-hover);
 }
 
 .btn-danger {
-    color: var(--btn-color-danger-text);
+    color: var(--red);
+    box-shadow:inset 0px 0px 0px 2px var(--red);
+}
+.btn-danger i {
+    transform: scale(.8);
+}
+.btn-danger:hover {
+    background-color: var(--red);
+    color: var(--background-1);
+    box-shadow:inset 0px 0px 0px 2px var(--red);
+}
+
+.btn-find {
+    padding: 1rem 3rem;
+    margin: .5rem 0 3rem 0;
+    border-radius: 50px;
+}
+
+.btn-find i {
+    transform: scale(1.4);
+}
+
+@media (max-width: 800px) {
+    .artist-btn-responsive {
+        margin: 1rem 0;
+    }
 }

@@ -1,38 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 @import 'shared/variables.css';
 @import 'shared/header.css';
 @import 'shared/buttons.css';
 @import 'shared/form.css';
 @import 'shared/artist.css';
 @import 'shared/songs.css';
+@import 'shared/backgrounds.css';
+@import 'shared/api.css';
+@import 'shared/footer.css';
 
 :root {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    color: var(--text-light);
+    font-family: var(--font-two);
+    font-size: 14px;
+    color: var(--text-1);
+    overflow-x: hidden;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background: linear-gradient(to right, var(--background-dark), var(--background-light))
+    position: relative;
+    background: var(--background-3);
+    color: var(--text-1);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+.container {
+    position: relative;
+    /* background-color: var(--background-2); */
+    max-width: 1300px;
+    margin: auto;
+    margin-bottom: 3rem;
+    padding: 0 50px 1rem 50px;
+    padding-top: 20rem;
+    
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+}
+
+h1 {
+    font-family: var(--font-one);
+    font-size: var(--font-1);
 }
 
 h2 {
-    font-size: var(--font-header);
+    font-family: var(--font-two);
+    font-size: var(--font-1);
+    font-weight: var(--font-weight-small);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: var(--font-two);
+    font-size: var(--font-3);
     font-weight: var(--font-weight-med);
 }
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    margin-bottom: 3rem;
+h4 {
+    font-family: var(--font-two);
+    font-size: var(--font-4);
+    font-weight: var(--font-weight-regular);
 }
 
-.inner-container {
-    margin: 0 2rem;
-}
 
 .btn-row {
     display: flex;
@@ -55,5 +110,19 @@ h2 {
 }
 
 .error-message {
-    color: var(--btn-color-danger-text);
+    padding: 2rem 0;
+    color: var(--red);
+    font-size: var(--font-3);
+}
+
+@media (max-width: 1300px) {
+    .container {
+        max-width: 850px;
+   }
+}
+
+@media (max-width: 800px) {
+    .container { 
+        padding-top: 28rem;
+    }
 }

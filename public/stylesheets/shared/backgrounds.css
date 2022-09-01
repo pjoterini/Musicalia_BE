@@ -1,0 +1,46 @@
+.background {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.background-2 {
+    background-color: var(--background-2);
+}
+
+.pixel-background-1 {
+    background-image: url('../../covers/pixel_background1.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: .3;
+    height: 75%;
+}
+.pixel-background-2 {
+    background-image: url('../../covers/pixel_background2.webp');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    opacity: .4;
+    height: 75%;
+    transform: scaleX(-1);
+}
+.pixel-background-3 {
+    background-image: url('../../covers/pixel_background3.webp');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    opacity: .4;
+    height: 75%;
+}
+.pixel-background-4 {
+    background-image: url('../../covers/pixel_background4.webp');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    opacity: .4;
+    height: 75%;
+}
+

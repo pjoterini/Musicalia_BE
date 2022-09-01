@@ -1,44 +1,85 @@
 .header-nav {
+    background-color: var(--background-1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    margin-inline: auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5rem;
+    flex-direction: column;
+    
+    box-shadow: 0px -5px 20px 0px rgb(61, 61, 61);
+    z-index: 2;
 }
 
 .header-title {
-    color: var(--color-light);
-    font-size: var(--font-big);
+    color: var(--text-1);
+    font-family: var(--font-one);
+    font-size: 2.7rem;
     text-decoration: none;
-    font-weight: var(--font-weight-small);
+    text-align: center;
+    margin: 3rem 0;
+    border-bottom: solid 1px var(--text-1);
 }
 
-.header-links {
+.header-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.header-section-title {
+    font-family: var(--font-one);
+}
+
+.header-artists, .header-songs {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 0;
+}
+
+.header-artists-ul, .header-songs-ul {
+    display: flex;
 }
 
 .header-link {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 2rem;
 }
 
 .header-link a{
-    margin: 0 1.2rem;
-    padding-bottom: .1rem;
-    color: var(--color-light);
-    font-size: var(--font-med);
-    text-decoration: none;
-    text-transform: uppercase;
+    color: var(--text-1);
+    font-size: var(--font-3);
     font-weight: var(--font-weight-small);
-    border-bottom: 1px solid rgba(255, 255, 255, 0);
-
-    transition: all 500ms ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
-.header-link a:hover {
-    border-bottom: 1px solid white;
+.header-link i {
+    margin-right: .4rem;
+}
+
+@media (max-width: 800px) {
+    .header-section {
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-bottom: 1rem;
+    }
+
+    .header-link {
+        margin-bottom: 2rem;
+        margin-left: .8rem;
+        margin-right: .8rem;
+    }
+
+    .header-title {
+        font-size: var(--font-1);
+    }
+    
+    .header-section-title {
+        font-size: var(--font-2);
+    }
 }

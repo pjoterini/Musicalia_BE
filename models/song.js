@@ -5,16 +5,16 @@ const songSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    aritst: {
+    artist: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Artist'
     },
-    // genre: {
-    //     type: mongoose.Schema.Types.ObjectId.genre,
-    //     required: true,
-    //     ref: 'Artist'
-    // },
+    genre: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Artist'
+    },
 	rating: {
 		type: Number,
 		max: 10,

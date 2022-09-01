@@ -1,0 +1,19 @@
+<div class="artist-grid">
+  <% artists.forEach(artist => { %>
+  <div class="artist-card">
+    <a href="/artists/<%= artist.id %>">
+      <img class="artist-cover" src="<%= artist.coverImagePath %>" />
+    </a>
+    <div class="artist-card-bottom">
+      <h4 class="artist-title"><%= artist.name %></h4>
+      <a
+        class="listen-btn-artist"
+        target="_blank"
+        href="https://www.youtube.com/results?search_query=<%= artist.name  %>"
+      >
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+    </div>
+  </div>
+  <% }) %>
+</div>
