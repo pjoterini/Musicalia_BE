@@ -1,8 +1,5 @@
 require("dotenv").config();
 
-var util = require("util");
-var encoder = new util.TextEncoder("utf-8");
-
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
