@@ -1,6 +1,6 @@
 # Musicalia
 
-[App Site Link](https://musicalia-app.herokuapp.com/)
+[App Site Link](https://musicalia-.glitch.me//)
 
 ## Description
 
