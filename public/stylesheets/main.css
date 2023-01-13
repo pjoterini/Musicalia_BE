@@ -1,128 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
-@import 'shared/variables.css';
-@import 'shared/header.css';
-@import 'shared/buttons.css';
-@import 'shared/form.css';
-@import 'shared/artist.css';
-@import 'shared/songs.css';
-@import 'shared/backgrounds.css';
-@import 'shared/api.css';
-@import 'shared/footer.css';
+@import "shared/variables.css";
+@import "shared/header.css";
+@import "shared/buttons.css";
+@import "shared/form.css";
+@import "shared/artist.css";
+@import "shared/songs.css";
+@import "shared/backgrounds.css";
+@import "shared/api.css";
+@import "shared/footer.css";
 
 :root {
-    font-family: var(--font-two);
-    font-size: 14px;
-    color: var(--text-1);
-    overflow-x: hidden;
+  font-family: var(--font-two);
+  font-size: 14px;
+  color: var(--text-1);
+  overflow-x: hidden;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    position: relative;
-    background: var(--background-3);
-    color: var(--text-1);
+  position: relative;
+  background: var(--background-3);
+  color: var(--text-1);
 }
 
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 .container {
-    position: relative;
-    /* background-color: var(--background-2); */
-    max-width: 1300px;
-    margin: auto;
-    margin-bottom: 3rem;
-    padding: 0 50px 1rem 50px;
-    padding-top: 20rem;
-    
-    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+  position: relative;
+  /* background-color: var(--background-2); */
+  max-width: 1300px;
+  margin: auto;
+  margin-bottom: 3rem;
+  padding: 0 50px 1rem 50px;
+  padding-top: 20rem;
+
+  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
 }
 
 h1 {
-    font-family: var(--font-one);
-    font-size: var(--font-1);
+  font-family: var(--font-one);
+  font-size: var(--font-1);
 }
 
 h2 {
-    font-family: var(--font-two);
-    font-size: var(--font-1);
-    font-weight: var(--font-weight-small);
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
+  font-family: var(--font-two);
+  font-size: var(--font-1);
+  font-weight: var(--font-weight-small);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 h3 {
-    font-family: var(--font-two);
-    font-size: var(--font-3);
-    font-weight: var(--font-weight-med);
+  font-family: var(--font-two);
+  font-size: var(--font-3);
+  font-weight: var(--font-weight-med);
 }
 
 h4 {
-    font-family: var(--font-two);
-    font-size: var(--font-4);
-    font-weight: var(--font-weight-regular);
+  font-family: var(--font-two);
+  font-size: var(--font-4);
+  font-weight: var(--font-weight-regular);
 }
 
-
 .btn-row {
-    display: flex;
-    align-items: flex-start;
-    margin-top: .5rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .btn-row > * {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .btn-row > *:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
-
 .m-bt-0 {
-    margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .error-message {
-    padding: 2rem 0;
-    color: var(--red);
-    font-size: var(--font-3);
+  display: inline-block;
+  background-color: black;
+  padding: 1rem;
+  margin: 1rem 0;
+  color: var(--red);
+  font-size: var(--font-3);
 }
 
 @media (max-width: 1300px) {
-    .container {
-        max-width: 850px;
-   }
+  .container {
+    max-width: 850px;
+  }
 }
 
 @media (max-width: 800px) {
-    .container { 
-        padding-top: 28rem;
-    }
+  .container {
+    padding-top: 28rem;
+  }
 }

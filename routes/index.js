@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const Song = require("../models/song");
 const Artist = require("../models/artist");
-// redeploy
 
 const fetch = require("node-fetch");
 
@@ -18,6 +17,7 @@ router.get("/", async (req, res) => {
     let date = new Date(new Date().setDate(new Date().getDate() - 30))
       .toISOString()
       .slice(0, 10);
+
     let apiUrl = `https://newsapi.org/v2/everything?q=music&from=${date}&sortBy=relevancy&apiKey=${process.env.API_KEY}`;
 
     const apiRes = await fetch(apiUrl);
@@ -64,7 +64,7 @@ router.post("/", async function (req, res) {
     if (req.body.artists == "artists") {
       reqBodyVar = "bands artist artists band music";
     }
-    if (req.body.artists == "artists") {
+    if (req.body.soundtracks == "soundtracks") {
       reqBodyVar = "soundtrack movie game music";
     }
     if (req.body.retro == "retro") {
