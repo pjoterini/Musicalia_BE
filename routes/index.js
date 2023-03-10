@@ -7,14 +7,12 @@ const Artist = require("../models/artist");
 const fetch = require("node-fetch");
 
 router.get("/", async (req, res) => {
-  //  API PROXY
-
   let songs;
   let artists;
   let articlesList;
 
   try {
-    let date = new Date(new Date().setDate(new Date().getDate() - 30))
+    let date = new Date(new Date().setDate(new Date().getDate() - 20))
       .toISOString()
       .slice(0, 10);
 
@@ -22,6 +20,7 @@ router.get("/", async (req, res) => {
 
     const apiRes = await fetch(apiUrl);
     const apiData = await apiRes.json();
+
     articlesList = await apiData.articles.slice(0, 8);
 
     artists = await Artist.find().limit(6).exec();
