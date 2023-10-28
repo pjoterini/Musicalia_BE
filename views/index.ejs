@@ -1,71 +1,34 @@
 <div class="background background-2"></div>
 
 <div class="api-container">
-    <h2 class="api-h2">Articles</h2>
-    <div class="api-btn-row">
+  <h2 class="api-h2">Articles</h2>
 
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="music" name="music" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="songs" name="songs" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="festivals" name="festivals" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="classical" name="classical" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="artists" name="artists" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="soundtracks" name="soundtracks" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="retro" name="retro" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-
-      <form class="api-form" action="/" method="post">
-        <input class="btn find-api-btn api-field" readonly type="text" value="alternative" name="alternative" />
-        <button class="btn find-api-btn api-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-    </div>
-  </form> 
-
-      <div class="api-links-container">
-        <ul class="api-links-list">
-          <% articlesList.forEach(article => { %>
-          <div class="api-li">
-            <a class="api-a" href="<%= article.url %> ">
-              <p class="api-title"><%= article.title %></p>
-              <img class="api-img" src="<%= article.urlToImage %> " alt="" />
-              <p class="api-p"><%= article.description.slice(0, 110) %>..</p>
-            </a>
-          </div>
-          <% }) %>
-        </ul>
-      </div>
-    </div>
-
-    <h2>Recently added</h2>
-    <div><%- include('partials/artistGrid', { artists: artists}) %></div>
-    <div>
-      <%- include('partials/songGrid', { songs: songs, large : false }) %>
-    </div>
-
+  <form class="api-form" action="/" method="post">
+    <%- include('partials/article', { value: 'music'}) %> <%-
+    include('partials/article', { value: 'songs'}) %> <%-
+    include('partials/article', { value: 'festivals'}) %> <%-
+    include('partials/article', { value: 'classical'}) %> <%-
+    include('partials/article', { value: 'artists'}) %> <%-
+    include('partials/article', { value: 'soundtracks'}) %> <%-
+    include('partials/article', { value: 'retro'}) %> <%-
+    include('partials/article', { value: 'alternative'}) %>
   </form>
+
+  <div class="api-links-container">
+    <ul class="api-links-list">
+      <% articlesList.forEach(article => { %>
+      <div class="api-li">
+        <a class="api-a" href="<%= article.url %> ">
+          <p class="api-title"><%= article.title %></p>
+          <img class="api-img" src="<%= article.urlToImage %> " alt="" />
+          <p class="api-p"><%= article.description.slice(0, 110) %>..</p>
+        </a>
+      </div>
+      <% }) %>
+    </ul>
+  </div>
+
+  <h2>Recently added</h2>
+  <div><%- include('partials/artistGrid', { artists: artists}) %></div>
+  <div><%- include('partials/songGrid', { songs: songs, large: false }) %></div>
 </div>

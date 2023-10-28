@@ -1,0 +1,98 @@
+.form-row-artist {
+    display: flex;
+    margin-bottom: .5rem;
+}
+.form-row-song {
+    display: flex;
+    margin-bottom: .5rem;
+}
+
+.form-row-end {
+    display: flex;
+    justify-content: center;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    flex-grow: .5;
+    flex-basis: 0;
+}
+
+.form-item input {
+    margin-bottom: 1rem;
+    
+}
+
+.edit-add input {
+    width: 50%;
+}
+
+.form-item:first-child {
+    margin-left: 0;
+}
+
+.form-item-no-grow {
+    flex-grow: 0;
+}
+
+.form-item > label {
+    font-size: var(--font-3);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: .25rem;
+    margin-left: .25rem;
+}
+
+.form-item input, .form-item select, .form-item textarea {
+    height: 2.5rem;
+    padding: .25rem .5rem;
+    border: 1px solid var(--text-3);
+    background-color: var(--background-1);
+    color: var(--text-1);
+    font-size: var(--font-3);
+    outline: none;
+}
+
+.form-item textarea {
+    height: 100%;
+    resize: none;
+}
+
+.form-item input:focus, .form-item select:focus, .form-item textarea:focus {
+    border: 1px solid var(--text-1);
+}
+
+.filepond--root {
+    font-family: var(--font-two);
+    margin-bottom: 0;
+}
+
+.filepond--root .filepond--panel-root {
+    background-color: var(--background-1);
+    border: 2px solid var(--text-3);
+}
+
+.filepond--root .filepond--drop-label {
+    color: var(--text-1);
+    font-size: inherit;
+}
+
+@media (max-width: 800px) {
+    .form-row-artist {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: .5rem;
+    }
+    .form-row-song {
+        flex-wrap: wrap;
+    }
+
+    .form-item {
+        margin-left: 0;
+    }
+
+    .edit-add input {
+        width: 100%;
+    }
+}
