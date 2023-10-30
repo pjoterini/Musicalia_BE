@@ -27,7 +27,6 @@ router.get('/', async (req, res) => {
 
     artists = await Artist.find().limit(6).exec()
     songs = await Song.find().populate('artist').limit(10).exec()
-    console.log(articlesList)
   } catch (err) {
     console.error(err)
     articlesList = []
