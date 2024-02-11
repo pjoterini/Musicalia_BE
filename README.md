@@ -6,7 +6,7 @@
 
 Fullstack music application with CRUD operations and API usage made with Node.js, Express, MongoDB/Mongoose and React.js as frontend.
 
-PREVIOUSLY views were implemented with EJS and CSS. Source code for this solution can be found under '0.MPA_with_EJS' foler in root directory(Musicalia_BE repository).
+PREVIOUSLY views were implemented with EJS and CSS. Source code for this solution can be found under '0.MPA_with_EJS' folder in root directory(Musicalia_BE repository).
 
 ## Navigation
 
