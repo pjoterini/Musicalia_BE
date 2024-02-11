@@ -41,7 +41,8 @@ app.use('/', require('./routes/index'))
 app.use('/artists', require('./routes/artists'))
 app.use('/songs', require('./routes/songs'))
 
-app.listen(process.env.PORT || 3000, () => console.log('http://localhost:3000'))
+const port = process.env.PORT || 3000
+app.listen(port, () => console.log(`App listening at http://localhost:${port}`))
 
 exports.modules = {
   upload
