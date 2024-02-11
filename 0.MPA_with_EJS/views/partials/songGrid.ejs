@@ -1,0 +1,27 @@
+<% songCoverClass = locals.large ? 'song-cover-large' : '' %> <% songGridClass =
+locals.large ? 'song-grid-large' : '' %>
+
+<div class="song-grid <%= songGridClass %>">
+  <% songs.forEach(song => { %>
+  <div>
+    <a
+      class="listen-btn"
+      target="_blank"
+      href="https://www.youtube.com/results?search_query=<%= song.artist.name  %> <%= song.title %>"
+    >
+      <p>Listen</p>
+      <i class="fa-brands fa-youtube"></i>
+      <p>Watch</p>
+    </a>
+
+    <a class="song-cover-link" href="/songs/<%= song.id %>">
+      <p class="song-cover-hover">info.</p>
+      <img
+        class="song-cover <%= songCoverClass %>"
+        src="<%= song.coverImagePath %>"
+      />
+    </a>
+    <h4 class="song-title"><%= song.artist.name %> - <%= song.title %></h4>
+  </div>
+  <% }) %>
+</div>
